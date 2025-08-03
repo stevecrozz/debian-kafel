@@ -1,0 +1,27 @@
+Source: kafel
+Section: libs
+Priority: optional
+Maintainer: Stephen Crosby <stevecrozz@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13), flex, bison
+Standards-Version: 4.7.2
+Homepage: https://github.com/google/kafel
+Vcs-Browser: https://github.com/google/kafel
+Vcs-Git: https://github.com/google/kafel.git
+
+Package: libkafel1
+Architecture: any
+Multi-Arch: same
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Shared library for kafel policy parser
+ This package contains the runtime shared object for applications that link
+ against kafel.
+
+Package: libkafel-dev
+Section: libdevel
+Architecture: any
+Depends: libkafel1 (= ${binary:Version}), ${misc:Depends}
+Description: Development files for the kafel policy parser
+ This package contains the symlink libkafel.so and kafel.h for compiling
+ applications that use kafel.

@@ -1,0 +1,31 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE = 1
+export DEB_BUILD_MAINT_OPTIONS = noopt
+export DEB_CFLAGS_MAINT_APPEND = -O2 -fno-lto -I../include
+export DEB_CXXFLAGS_MAINT_APPEND = -O2 -fno-lto
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	LDFLAGS= make -I ../ -C src/ PROJECT_ROOT="" clean
+
+override_dh_auto_build:
+	LDFLAGS= make -I ../ -C src/ PROJECT_ROOT="" all
+
+override_dh_auto_install:
+	ARCH=$$(dpkg-architecture -qDEB_HOST_MULTIARCH); \
+	LIBDIR=debian/tmp/usr/lib/$$ARCH; \
+	install -d $$LIBDIR; \
+	install -d debian/tmp/usr/include; \
+	install -m 755 src/libkafel.so $$LIBDIR/libkafel.so.1.0.0; \
+	cd $$LIBDIR && \
+	ln -sf libkafel.so.1.0.0 libkafel.so.1 && \
+	ln -sf libkafel.so.1 libkafel.so; \
+	cd - >/dev/null; \
+	install -m 644 include/kafel.h debian/tmp/usr/include/
+
+override_dh_auto_test:
+	true
+
