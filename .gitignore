@@ -6,9 +6,9 @@
 *.files
 
 # Output files
-/libkafel.so
-/libkafel.a
 *.o
+src/libkafel.a
+src/libkafel.so
 
 # Generated files
 /src/lexer.h
