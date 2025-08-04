@@ -1,22 +1,4 @@
-kafel (0~git20240214-3ubuntu1) noble; urgency=medium
-
-  * Attempt to get Launchpad to build with -I../include
-
- -- Stephen Crosby <stevecrozz@gmail.com>  Fri, 01 Aug 2025 23:44:02 -0700
-
-kafel (0~git20240214-3) noble; urgency=medium
-
-  * Build again because launchpad is not accepting the original gz.
-
- -- Stephen Crosby <stevecrozz@gmail.com>  Fri, 01 Aug 2025 22:57:58 -0700
-
-kafel (0~git20240214-2) noble; urgency=medium
-
-  * Fix build system to correctly regenerate libkafel.so
-
- -- Stephen Crosby <stevecrozz@gmail.com>  Fri, 01 Aug 2025 22:57:58 -0700
-
-kafel (0~git20240214-1) noble; urgency=medium
+kafel (0~20231004-1) noble; urgency=medium
 
   * Initial release.
 

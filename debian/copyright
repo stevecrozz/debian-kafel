@@ -1,8 +1,9 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://github.com/google/kafel
 Upstream-Name: kafel
-Upstream-Contact: <preferred name and address to reach the upstream project>
-Files: *
+Upstream-Contact: https://github.com/google/kafel/issues
+Files:
+ *
 Copyright: 2016-2025 Google
 License: Apache-2.0
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,3 +20,11 @@ License: Apache-2.0
  .
  On Debian systems, the complete text of the Apache License version 2
  can be found in /usr/share/common-licenses/Apache-2.0
+
+Files: .gitignore Makefile CONTRIBUTING README* src/* build/* include/* samples/* test/* tools/*
+Copyright: 2016-2025 Google
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2025 Stephen Crosby
+License: Apache-2.0
