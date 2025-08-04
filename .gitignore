@@ -1,36 +1,21 @@
-# Build directories and temp files
-debian/tmp/
-debian/libkafel1/
-debian/libkafel-dev/
-!debian/source/
-!debian/source/format
-!debian/*.install
-!debian/*.symbols
-!debian/*.docs
-!debian/*.links
-!debian/*.dirs
+# Qtcreator stuff
+*.config
+*.creator
+*.includes
+*.user
+*.files
 
-# Debhelper-generated files
-debian/.debhelper/
-debian/files
-debian/debhelper-build-stamp
+# Output files
+/libkafel.so
+/libkafel.a
+*.o
 
-# dh_strip-generated debug symbols
-debian/*-dbgsym*/  # If present
-debian/*-dbgsym*.debhelper/
+# Generated files
+/src/lexer.h
+/src/lexer.c
+/src/parser.h
+/src/parser.c
 
-# dpkg-buildpackage outputs
-*.build
-*.changes
-*.deb
-*.dsc
-*.orig.tar.*
-*.tar.*
-*.buildinfo
-
-# Lintian overrides
-debian/*.lintian-overrides
-
-# Auto-generated control or md5sums files in installed packages
-debian/*/DEBIAN/
-debian/*/usr/
+# Backup files
+*.bak
+*~
