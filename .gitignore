@@ -19,3 +19,11 @@
 # Backup files
 *.bak
 *~
+
+# Packaging artifacts
+debian/.debhelper/
+debian/debhelper-build-stamp
+debian/files
+debian/libkafel-dev/
+debian/libkafel1/
+debian/tmp/
