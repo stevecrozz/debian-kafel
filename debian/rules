@@ -1,18 +1,22 @@
 #!/usr/bin/make -f
 
 export DH_VERBOSE = 1
-export DEB_BUILD_MAINT_OPTIONS = noopt
-export DEB_CFLAGS_MAINT_APPEND = -O2 -fno-lto -I../include
+export DEB_BUILD_MAINT_OPTIONS = noopt hardening=+bindnow
 export DEB_CXXFLAGS_MAINT_APPEND = -O2 -fno-lto
+export DEB_CFLAGS_MAINT_APPEND = -O2 -fno-lto -I../include -Wl,-z,relro -Wl,-z,now
+export LD = gcc
 
 %:
 	dh $@
 
 override_dh_auto_clean:
-	LDFLAGS= make -I ../ -C src/ PROJECT_ROOT="" clean
+	make -I ../ -C src/ PROJECT_ROOT="" clean
 
 override_dh_auto_build:
-	LDFLAGS= make -I ../ -C src/ PROJECT_ROOT="" all
+	LDFLAGS="$(shell dpkg-buildflags --get LDFLAGS)" \
+		CFLAGS="$(shell dpkg-buildflags --get CFLAGS)" \
+		CPPFLAGS="$(shell dpkg-buildflags --get CPPFLAGS)" \
+		make -I ../ -C src/ PROJECT_ROOT="" all
 
 override_dh_auto_install:
 	ARCH=$$(dpkg-architecture -qDEB_HOST_MULTIARCH); \

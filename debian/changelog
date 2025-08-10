@@ -1,3 +1,12 @@
+kafel (0~20231004-2) unstable; urgency=medium
+
+  * Initial release. (Closes: #1110377)
+  * Add symbols file with correct upstream versions.
+  * Enable bindnow hardening flags.
+  * Fix trailing whitespace and Lintian warnings.
+
+ -- Stephen Crosby <stevecrozz@gmail.com>  Sat, 09 Aug 2025 21:23:40 -0700
+
 kafel (0~20231004-1) unstable; urgency=medium
 
   * Initial release.

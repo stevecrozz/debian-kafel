@@ -1,0 +1,13 @@
+libkafel.so.1 libkafel1 #MINVER#
+* Build-Depends-Package: libkafel-dev
+ kafel_add_include_search_path@Base 0~20231004
+ kafel_compile@Base 0~20231004
+ kafel_compile_file@Base 0~20231004
+ kafel_compile_string@Base 0~20231004
+ kafel_ctxt_create@Base 0~20231004
+ kafel_ctxt_destroy@Base 0~20231004
+ kafel_error_msg@Base 0~20231004
+ kafel_set_input_file@Base 0~20231004
+ kafel_set_input_string@Base 0~20231004
+ kafel_set_target_arch@Base 0~20231004
+ kafel_set_target_archs@Base 0~20231004
