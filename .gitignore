@@ -27,3 +27,4 @@ debian/files
 debian/libkafel-dev/
 debian/libkafel1/
 debian/tmp/
+debian/*.substvars
